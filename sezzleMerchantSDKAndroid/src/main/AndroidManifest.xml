@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sezzle.sezzlemerchantsdkandroid">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application>
+        <activity
+            android:name=".CheckoutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+    </application>
+</manifest>

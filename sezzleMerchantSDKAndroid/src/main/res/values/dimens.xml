@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="sezzle_progressbar_dimen">80dp</dimen>
+    <dimen name="sezzle_promotion_size">16sp</dimen>
+</resources>

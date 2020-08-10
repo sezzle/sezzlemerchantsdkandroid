@@ -1,0 +1,7 @@
+<resources>
+    <color name="sezzle_purple">#8427D7</color>
+    <color name="sezzle_green">#00B873</color>
+    <color name="sezzle_black">#23292F</color>
+    <color name="sezzle_white">@android:color/white</color>
+    <color name="sezzle_ic_close_color">@android:color/white</color>
+</resources>

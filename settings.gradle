@@ -1,0 +1,3 @@
+include ':sezzleMerchantSDKAndroid'
+include ':app'
+rootProject.name = "MerchantSDKExample1"
