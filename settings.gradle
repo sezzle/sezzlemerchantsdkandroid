@@ -1,3 +1,2 @@
 include ':sezzleMerchantSDKAndroid'
-include ':app'
-rootProject.name = "MerchantSDKExample1"
+include ':sample-kotlin-app'
