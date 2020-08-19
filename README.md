@@ -5,7 +5,7 @@ Sezzle Android SDK allows you to offer Sezzle in your android app.
 
 # Installation
 
-# Usage Overview
+## Usage Overview
 
 Before you start the initialization for Sezzle SDK, you must have a merchant account with Sezzle.
 You will need your `public API Key` from [Sezzle Merchant Dashboard](https://dashboard.sezzle.com/merchant).
@@ -24,7 +24,7 @@ Sezzle.Companion.initialize(new Sezzle.Configuration(
 - `log level` is available in the `Sezzle` object.
 - `location` either US or CA is available in the `Sezzle.Location` object.
 
-# Checkout
+## Checkout
 Checkout creation is the process in which a customer uses Sezzle to pay for a purchase in your app.
 You should create an `Order` and a `Customer` and launch the Sezzle checkout using the `startCheckout` function.
 
