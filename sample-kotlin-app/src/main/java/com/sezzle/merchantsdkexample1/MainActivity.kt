@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), Sezzle.CheckoutCallbacks {
         val item = Item("widget", "sku123456", 1, amount)
         val discount = Discount("20% off", amount)
         val metadata = mapOf<String, String>("location_id" to "123", "store_name" to "Downtown Minneapolis", "store_manager" to "Jane Doe")
-        return Order("CAPTURE", "ord_rishi_1", "sezzle-store - #12749253509255", amount, true, listOf(item), listOf(discount), metadata, amount, amount, "2021-04-23T16:13:44Z")
+        return Order("AUTH", "ord_rishi_1", "sezzle-store - #12749253509255", amount, true, listOf(item), listOf(discount), metadata, amount, amount, "2021-04-23T16:13:44Z")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
