@@ -30,5 +30,6 @@ class SezzleConstants {
         const val ORDER_EXTRA = "order_extra"
         const val CHECKOUT_ERROR = "checkout_error"
         const val RESULT_ERROR = -8575
+        const val LOGO_PLACEHOLDER = "{sezzle_logo}"
     }
 }
