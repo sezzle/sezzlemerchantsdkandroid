@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <script>
+            var modalNode = document.createElement('div');
+
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function () {
+              if (httpRequest.readyState === XMLHttpRequest.DONE || httpRequest.readyState === 4) {
+                if (httpRequest.status === 200) {
+                  // append the html to the modal node
+                  modalNode.innerHTML = httpRequest.response;
+                  document.getElementsByTagName('html')[0].appendChild(modalNode);
+                  Array.prototype.forEach.call(document.getElementsByClassName('close-sezzle-modal'), (el) => {
+                    el.addEventListener('click', () => {
+                      window.location.href = "{{CANCEL_URL}}"
+                    });
+                  });
+                }
+                else {
+                  return console.warn("Can't load the modal because the link provided is not found");
+                }
+              }
+            }.bind(this);
+
+            var url = 'https://media.sezzle.com/shopify-app/assets/sezzle-modal-{{MODAL_VERSION}}-{{LANGUAGE}}.html';
+            httpRequest.open('GET', url, true);
+            httpRequest.send();
+        </script>
+    </body>
+</html>

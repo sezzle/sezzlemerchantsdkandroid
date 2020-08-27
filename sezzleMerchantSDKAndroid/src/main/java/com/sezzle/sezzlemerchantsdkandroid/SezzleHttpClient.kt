@@ -66,7 +66,6 @@ class SezzleHttpClient(var builder: OkHttpClient.Builder? = null) {
         }
 
         fun getProtocol(): String {
-            Log.v("Tag", SezzlePlugins.get()?.baseUrl()!!)
             return if (SezzlePlugins.get() != null && SezzlePlugins.get()?.baseUrl() != null && SezzlePlugins.get()?.baseUrl()!!.contains(SezzleConstants.HTTP)) {
                 ""
             } else {

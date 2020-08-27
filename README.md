@@ -68,3 +68,59 @@ Once the checkout is completed successfully, the token will be passed to `onSezz
 and capture from there. For more information on this and other backend endpoints,
 look at the [Sezzle Docs](https://docs.sezzle.com/#capture-amount-by-order).
 
+## Sezzle Widget and Modal
+Sezzle widget component and Modal components are used in product pages to educated users about Sezzle-payment.
+
+### Show Sezzle widget with `SezzlePromotionButton`
+
+To display the widget, the SDK provides a `SezzlePromotionButton` class. `SezzlePromotionButton` is implemented as follows:
+
+```xml
+    <com.sezzle.sezzlemerchantsdkandroid.SezzlePromotionButton
+         android:id="@+id/promo"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         app:sezzleTextSize="16sp"
+         android:layout_below="@+id/modal_button"
+         app:sezzleLogoType="SezzleLogoColorTextBlack" />
+```
+or
+```kotlin
+// Option1 - Load via findViewById
+val sezzlePromo = findViewById<SezzlePromotionButton>(R.id.promo)
+sezzlePromo.setLabel("or 4 interest-free payments with {sezzle_logo}")
+```
+or
+```kotlin
+// Option2 - Initialize
+val sezzlePromotionButton2 = SezzlePromotionButton(this)
+sezzlePromotionButton2.configWithLocalStyling(SezzleLogoType.SEZZLE_LOGO_BLACK_TEXT_BLACK)
+sezzlePromotionButton2.setLabel("or 4 interest-free payments with {sezzle_logo}")
+findViewById<RelativeLayout>(R.id.relative_layout).addView(sezzlePromotionButton2)
+```
+
+Configure the style of the SezzlePromotionButton
+sezzleLogoType: SezzleLogoType,
+        typeface: Typeface?,
+        sezzleTextColor: Int,
+        sezzleTextSize: Int
+- `configWithLocalStyling` that will use the local styles. 
+```kotlin
+// You can custom with the SezzleLogoType, Typeface, TextSize, TextColor
+sezzlePromotionButton2.configWithLocalStyling(
+    SezzleLogoType.SEZZLE_LOGO_BLACK_TEXT_BLACK,
+    ResourcesCompat.getFont(this, R.font.xyz),
+    android.R.color.darker_gray,
+    R.dimen.sezzle_promotion_size);
+```
+
+### Show Sezzle Modal
+Show the modal by calling `showSiteModal`
+
+```kotlin
+Sezzle.showSiteModal(this@MainActivity, "2.0.1", "fr")
+```
+- Version and language support can be found at [Sezzle Modals](https://github.com/sezzle/sezzle-js/tree/master/modals)
+- Use the [link] (https://media.sezzle.com/shopify-app/assets/sezzle-modal-2.0.0-en.html) to test the
+version and language you want to pass in `showSiteModal` to make sure they are valid.

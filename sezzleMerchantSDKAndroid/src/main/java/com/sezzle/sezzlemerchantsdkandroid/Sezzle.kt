@@ -8,6 +8,7 @@ import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.CHECKOUT_ER
 import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.CHECKOUT_TOKEN
 import com.sezzle.sezzlemerchantsdkandroid.model.Customer
 import com.sezzle.sezzlemerchantsdkandroid.model.Order
+import java.math.BigDecimal
 
 class Sezzle {
 
@@ -21,7 +22,11 @@ class Sezzle {
         const val LOG_LEVEL_NONE = Integer.MAX_VALUE;
         const val RESULT_ERROR = -8575
 
-        fun startCheckout(@NonNull activity: Activity, @NonNull customer: Customer, @NonNull order: Order) {
+        fun startCheckout(
+            @NonNull activity: Activity,
+            @NonNull customer: Customer,
+            @NonNull order: Order
+        ) {
             SezzleUtils.requireNonNull(activity, "activity cannot be null")
             SezzleUtils.requireNonNull(customer, "customer cannot be null")
             SezzleUtils.requireNonNull(order, "order cannot be null")
@@ -71,6 +76,18 @@ class Sezzle {
             }
             return false
         }
+
+        fun showSiteModal(
+            activity: Activity,
+            modalVersion: String?,
+            language: String?
+        ) {
+            SezzleUtils.requireNonNull(activity, "activity cannot be null")
+            ModalActivity.startActivity(
+                activity, 0,
+                modalVersion, language
+            )
+        }
     }
 
     interface CheckoutCallbacks {
@@ -96,6 +113,11 @@ class Sezzle {
         }
     }
 
-    class Configuration(val publicKey: String, val environment: Environment, val logLevel: Int, val location: Location)
+    class Configuration(
+        val publicKey: String,
+        val environment: Environment,
+        val logLevel: Int,
+        val location: Location
+    )
 
 }

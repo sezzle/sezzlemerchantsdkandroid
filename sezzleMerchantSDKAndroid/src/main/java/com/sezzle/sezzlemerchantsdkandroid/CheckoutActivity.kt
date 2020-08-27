@@ -2,9 +2,6 @@ package com.sezzle.sezzlemerchantsdkandroid
 
 import android.app.Activity
 import android.content.Intent
-import android.os.Build
-import android.util.Log
-import androidx.annotation.RequiresApi
 import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.CHECKOUT_TOKEN
 import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.CUSTOMER_EXTRA
 import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.INVALID_SEZZLE_TOKEN

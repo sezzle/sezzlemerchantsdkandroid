@@ -44,7 +44,6 @@ class CheckoutRequest(private val customer: Customer, private val order: Order, 
                     if (responseBody != null) {
                         val checkoutResponse = Klaxon()
                             .parse<CheckoutResponse>(responseBody.string())
-                        Log.v("Sezzle", checkoutResponse.toString())
                         if (callback != null) {
                             Handler(Looper.getMainLooper()).post {
                                 callback.onSuccess(

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SezzlePromotionButton">
+        <attr name="sezzleLogoType" format="enum">
+            <enum name="SezzleLogoColorTextBlack" value="0"/>
+            <enum name="SezzleLogoBlackTextBlack" value="1"/>
+            <enum name="SezzleLogoWhiteTextWhite" value="2"/>
+            <enum name="SezzleLogoWhiteTextWhiteFlat" value="3"/>
+            <enum name="SezzleLogoBlackTextBlackFlat" value="4"/>
+            <enum name="SezzleLogoColorTextWhite" value="5"/>
+        </attr>
+        <attr name="sezzleTextSize" format="dimension"/>
+        <attr name="sezzleTextColor" format="color"/>
+        <attr name="sezzleTextFont" format="reference"/>
+    </declare-styleable>
+</resources>
