@@ -9,7 +9,7 @@ class SezzleConstants {
 
         // URL
         const val SANDBOX_URL = "sandbox.sezzle.com"
-        const val PRODUCTION_URL = "staging.gateway.sezzle.com"
+        const val PRODUCTION_URL = "gateway.sezzle.com"
 
         const val CHECKOUT_PATH = "/v2/session"
 
