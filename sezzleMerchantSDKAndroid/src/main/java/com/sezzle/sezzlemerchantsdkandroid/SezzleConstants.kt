@@ -22,6 +22,9 @@ class SezzleConstants {
 
         const val HTTPS_PROTOCOL = "https://"
         const val HTTP_PROTOCOL = "http://"
+        const val TEXT_HTML = "text/html"
+        const val MAP_EXTRA = "MAP_EXTRA"
+        const val PREQUAL_ERROR = "prequal_error"
         const val HTTP = "http"
         const val CONTENT_TYPE = "application/json; charset=utf-8"
         const val UTF_8 = "utf-8";
@@ -31,5 +34,11 @@ class SezzleConstants {
         const val CHECKOUT_ERROR = "checkout_error"
         const val RESULT_ERROR = -8575
         const val LOGO_PLACEHOLDER = "{sezzle_logo}"
+        const val PLACEHOLDER_START = "{{"
+        const val PLACEHOLDER_END = "}}"
+
+        const val CANCEL_URL = "CANCEL_URL"
+        const val MODAL_VERSION = "MODAL_VERSION"
+        const val LANGUAGE = "LANGUAGE"
     }
 }

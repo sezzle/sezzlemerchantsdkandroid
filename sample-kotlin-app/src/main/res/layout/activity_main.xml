@@ -14,13 +14,22 @@
         android:layout_centerHorizontal="true"
         android:text="Start checkout"/>
 
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/modal_button"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/fab"
+        android:text="Show modal"/>
+
     <com.sezzle.sezzlemerchantsdkandroid.SezzlePromotionButton
         android:id="@+id/promo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         app:sezzleTextSize="16sp"
-        android:layout_below="@+id/fab"
+        android:layout_below="@+id/modal_button"
         app:sezzleLogoType="SezzleLogoColorTextBlack" />
 
 </RelativeLayout>

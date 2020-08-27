@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sezzle.sezzlemerchantsdkandroid.ModalActivity
 import com.sezzle.sezzlemerchantsdkandroid.Sezzle
 import com.sezzle.sezzlemerchantsdkandroid.SezzleLogoType
 import com.sezzle.sezzlemerchantsdkandroid.SezzlePromotionButton
@@ -28,9 +29,15 @@ class MainActivity : AppCompatActivity(), Sezzle.CheckoutCallbacks {
             Sezzle.startCheckout(this@MainActivity, customerModel(), orderModel())
         }
 
+        findViewById<Button>(R.id.modal_button).setOnClickListener { view ->
+            Sezzle.showSiteModal(this@MainActivity, "2.0.0", "en")
+        }
+
         val sezzlePromo = findViewById<SezzlePromotionButton>(R.id.promo)
-        if (sezzlePromo == null) Log.v("Sezzle", "NULLLLLLLLLLL")
         sezzlePromo.setLabel("or 4 interest-free payments with {sezzle_logo}")
+        sezzlePromo.setOnClickListener { view ->
+            Sezzle.showSiteModal(this@MainActivity, "2.0.1", "fr")
+        }
 
 
         val sezzlePromotionButton2 = SezzlePromotionButton(this)

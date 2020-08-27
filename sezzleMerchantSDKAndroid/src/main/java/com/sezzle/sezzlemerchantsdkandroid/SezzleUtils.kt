@@ -3,16 +3,21 @@ package com.sezzle.sezzlemerchantsdkandroid
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.res.Resources
-import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ImageSpan
-import android.util.Log
 import android.view.Window
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.LOGO_PLACEHOLDER
+import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.PLACEHOLDER_END
+import com.sezzle.sezzlemerchantsdkandroid.SezzleConstants.Companion.PLACEHOLDER_START
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.nio.charset.Charset
 import kotlin.math.roundToInt
 
 class SezzleUtils {
@@ -105,6 +110,26 @@ class SezzleUtils {
             )
 
             return ImageSpan(logoDrawable, ImageSpan.ALIGN_CENTER)
+        }
+
+        @Throws(IOException::class)
+        fun readInputStream(inputStream: InputStream): String {
+            val r = BufferedReader(InputStreamReader(inputStream, Charset.forName("UTF-8")))
+            val total = StringBuilder()
+            var line: String?
+            while (r.readLine().also { line = it } != null) {
+                total.append(line).append('\n')
+            }
+            return total.toString()
+        }
+
+        fun replacePlaceholders(text: String, map: Map<String, String>?): String {
+            var text = text
+            for (o in map!!.entries) {
+                val placeholder: String = PLACEHOLDER_START + o.key + PLACEHOLDER_END
+                text = text.replace(placeholder, o.value)
+            }
+            return text
         }
 
     }
