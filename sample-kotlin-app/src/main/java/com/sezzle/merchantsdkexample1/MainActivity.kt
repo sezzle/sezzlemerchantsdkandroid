@@ -58,21 +58,21 @@ class MainActivity : AppCompatActivity(), Sezzle.CheckoutCallbacks {
 
     private fun customerModel(): Customer {
         val address = Address(
-            "Rishi Mukherjee",
-            "2640 Nicollet Avenue",
-            "Unit 403",
+            "John Doe",
+            "2610 Joes Avenue",
+            "Unit 81",
             "Minneapolis",
             "MN",
-            "55408",
+            "55308",
             "US",
-            "6127026972"
+            "6127024309"
         )
         return Customer(
             true,
             "rishi.mukherjee@sezzle.com",
             "Rishi",
             "Mukherjee",
-            "6127026972",
+            "6127024309",
             "1993-02-24",
             address,
             address
