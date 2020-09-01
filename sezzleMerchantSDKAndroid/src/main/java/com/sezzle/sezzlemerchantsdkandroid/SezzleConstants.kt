@@ -8,7 +8,7 @@ class SezzleConstants {
         var location: Sezzle.Location = Sezzle.Location.US;
 
         // URL
-        const val SANDBOX_URL = "sandbox.sezzle.com"
+        const val SANDBOX_URL = "sandbox.gateway.sezzle.com"
         const val PRODUCTION_URL = "gateway.sezzle.com"
 
         const val CHECKOUT_PATH = "/v2/session"
