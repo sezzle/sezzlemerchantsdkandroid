@@ -10,7 +10,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -43,3 +43,11 @@ dependencies {
     implementation 'com.beust:klaxon:5.0.1'
     implementation "com.squareup.okhttp3:okhttp:4.8.0"
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'com.sezzle'
+    PUBLISH_ARTIFACT_ID = 'sezzlemerchantsdkandroid'
+    PUBLISH_VERSION = android.defaultConfig.versionName
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"

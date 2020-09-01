@@ -4,6 +4,18 @@ Sezzle Android SDK
 Sezzle Android SDK allows you to offer Sezzle in your android app.
 
 # Installation
+Download via Gradle:
+```groovy
+implementation "com.sezzle:sezzlemerchantsdkandroid:1.0.2"
+```
+or Maven:
+```xml
+<dependency>
+  <groupId>com.sezzle</groupId>
+  <artifactId>sezzlemerchantsdkandroid</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
 
 ## Usage Overview
 
